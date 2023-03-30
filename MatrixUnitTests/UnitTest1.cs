@@ -32,7 +32,7 @@ namespace MatrixUnitTests
         }
 
         [TestMethod]
-        public void ZeroStaticProperty()
+        public void StaticProperty_Zero()
         {
             var matrix = Matrix2D.Zero;
             Assert.AreEqual(matrix.A, 0);
@@ -42,7 +42,7 @@ namespace MatrixUnitTests
         }
 
         [TestMethod]
-        public void IdStaticProperty()
+        public void StaticProperty_Id()
         {
             var matrix = Matrix2D.Id;
 
@@ -50,6 +50,18 @@ namespace MatrixUnitTests
             Assert.AreEqual(matrix.B, 0);
             Assert.AreEqual(matrix.C, 0);
             Assert.AreEqual(matrix.D, 1);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, 2, 3, 4, "[[1, 2], [3, 4]]")]
+        [DataRow(20, 18, -2, -5, "[[20, 18], [-2, -5]]")]
+        [DataRow(13, 2, -7, -10, "[[13, 2], [-7, -10]]")]
+        [DataRow(0, 0, 2, 10, "[[0, 0], [2, 10]]")]
+        public void Method_ToString(int a, int b, int c, int d, string expectedText)
+        {
+            var matrix = new Matrix2D(a, b, c, d);
+
+            Assert.AreEqual(matrix.ToString(), expectedText);   
         }
     }
 }

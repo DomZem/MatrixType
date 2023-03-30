@@ -20,5 +20,7 @@
         }   
 
         public Matrix2D():this(1, 0, 0, 1) { }
+
+        public override string ToString() => $"[[{A}, {B}], [{C}, {D}]]";
     }
 }
