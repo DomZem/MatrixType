@@ -1,10 +1,13 @@
-﻿namespace MatrixConsoleAppDemo
+﻿using MatrixLib;
+
+namespace MatrixConsoleAppDemo
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var m = new Matrix2D(1, 0, 2, 5);
+            
         }
     }
 }
