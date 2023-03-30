@@ -7,6 +7,10 @@
         public int C { get; init; }
         public int D { get; init; }
 
+        public static readonly Matrix2D Id = new();
+
+        public static readonly Matrix2D Zero = new(0, 0, 0, 0);
+
         public Matrix2D(int a, int b, int c, int d)
         {
             A = a;

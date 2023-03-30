@@ -30,5 +30,26 @@ namespace MatrixUnitTests
             Assert.AreEqual(matrix.C, c);
             Assert.AreEqual(matrix.D, d);
         }
+
+        [TestMethod]
+        public void ZeroStaticProperty()
+        {
+            var matrix = Matrix2D.Zero;
+            Assert.AreEqual(matrix.A, 0);
+            Assert.AreEqual(matrix.B, 0);
+            Assert.AreEqual(matrix.C, 0);
+            Assert.AreEqual(matrix.D, 0);
+        }
+
+        [TestMethod]
+        public void IdStaticProperty()
+        {
+            var matrix = Matrix2D.Id;
+
+            Assert.AreEqual(matrix.A, 1);
+            Assert.AreEqual(matrix.B, 0);
+            Assert.AreEqual(matrix.C, 0);
+            Assert.AreEqual(matrix.D, 1);
+        }
     }
 }
